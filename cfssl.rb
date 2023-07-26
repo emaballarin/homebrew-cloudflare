@@ -6,10 +6,10 @@ end
 
 class Cfssl < Formula
   head 'https://github.com/cloudflare/cfssl', :using => NoOpDownloadStrategy
-  url 'https://github.com/cloudflare/cfssl/archive/1.2.0.zip'
-  sha256 'afe8ac0087226dfe02448c05110108b2c62eabeae5bcf9064784366b44d29b7a'
+  url 'https://github.com/cloudflare/cfssl/archive/v1.6.4.zip'
+  sha256 '9849dfd1fd1e78f23fb601893f861d15226c97c5748da387315d8dd715ad1238'
   homepage 'https://github.com/cloudflare/cfssl'
-  version '1.2.0'
+  version 'v1.6.4'
 
   depends_on 'go' => :build
 
@@ -22,7 +22,7 @@ class Cfssl < Formula
       chdir '..' do
         ENV['GOPATH'] = Dir.pwd
         mkdir 'src/github.com/cloudflare'
-        symlink '../../../cfssl-1.2.0', 'src/github.com/cloudflare/cfssl'
+        symlink '../../../cfssl-v1.6.4', 'src/github.com/cloudflare/cfssl'
         system 'go', 'install', 'github.com/cloudflare/cfssl/cmd/cfssl'
         bin.install 'bin/cfssl'
       end
