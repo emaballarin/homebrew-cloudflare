@@ -2,17 +2,18 @@ cask "cf-terraforming" do
   arch arm:   "arm64",
        intel: "amd64"
 
-  version "0.14.0"
-  sha256 arm:   "3b00ff4f8e2fad563f89efa445eed3e3f1e82b9eb97223a19aaad7df36d7b851",
-         intel: "3c8ff74054b3812d8b2163d7e1c34d3d67370b425dd5584d5f10a9cd61d4ad1a"
+  version "0.16.1"
+  sha256 arm:   "55b8249fa33fa05b937d4294d20554ff1dd16cde93199cebf582223dda4b1fca",
+         intel: "2cbb51dad8d86b3e10a424333197c2b70831336cfa4f6c134fbcb3a0efba7fd2"
 
   url "https://github.com/cloudflare/cf-terraforming/releases/download/v#{version}/cf-terraforming_#{version}_darwin_#{arch}.tar.gz"
-  livecheck do
-    url "https://github.com/cloudflare/cf-terraforming/releases.atom"
-  end
   name "cf-terraforming"
   desc "Utility to export your existing Cloudflare resources as Terraform resources"
   homepage "https://github.com/cloudflare/cf-terraforming"
+
+  livecheck do
+    url "https://github.com/cloudflare/cf-terraforming/releases.atom"
+  end
 
   binary "cf-terraforming"
 end
